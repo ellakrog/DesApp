@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Auction" Height="350" Width="525"
+    
+    >
+
+    <Grid DataContext="{Binding}">
+        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" Height="264" HorizontalAlignment="Left" ItemsSource="{Binding}" Name="aukcija_bazeDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="503" SelectionChanged="aukcija_bazeDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="aukcijaIdColumn" Binding="{Binding Path=AukcijaID}" Header="Auction ID" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="artikalNameColumn" Binding="{Binding Path=ProizvodIme}" Header="Item Name" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="pocetnacenaColumn" Binding="{Binding Path=PocetnaCena}" Header="Start Price" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="trenutnacenaColumn" Binding="{Binding Path=TrenutnaCena}" Header="Current Price" Width="SizeToHeader" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Login" Height="23" HorizontalAlignment="Left" Margin="331,276,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+        <Button Content="New Auction" Height="23" HorizontalAlignment="Left" Margin="416,276,0,0" Name="button3" VerticalAlignment="Top" Width="75" Click="button3_Click" />
+        <Button Content="Bid price" Height="23" HorizontalAlignment="Left" Margin="12,276,0,0" Name="button2" VerticalAlignment="Top" Width="75" Click="button2_Click" />
+    </Grid>
+</Window>
